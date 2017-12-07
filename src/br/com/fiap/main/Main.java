@@ -60,6 +60,13 @@ public class Main {
 		List<Pedidos>pedidos = pedidoDAO.listar();
 		pedidos.stream().forEach(System.out::println);
 		
+		Clientes c3 = clienteDAO.buscar(c1.getIdCliente());
+		c3.setNome("Felipe Santos");
+		c3.setEmail("felipe.artur@hotmail.com");
+		
+		clienteDAO.atualizar(c3);
+		System.out.println("\nAtualização do Cliente:");
+		System.out.println("ID Cliente: " + c3.getIdCliente() +"\nNome: " + c3.getNome() + "\nEmail: " + c3.getEmail() +"\n" );		
 		
 	}
 
